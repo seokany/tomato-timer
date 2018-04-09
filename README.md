@@ -8,6 +8,20 @@ https://exp.host/@serranoarevalo/tomato-timer
 
 ### Version
 
+## v3.1 Creating tomato reducer
+1. reducer.js =>
+    Import
+    Actions
+    Action Creators
+    Reducer
+    Reducer Functions
+    // Export = button listen!
+    Export Action Creators
+    Export Reducer
+2. 각 기능에 대한 스터디!
+
+### v3.x Implementing Redux in Our App
+
 ## v2.2 Designing the State Shape
 
 {
@@ -20,9 +34,9 @@ https://exp.host/@serranoarevalo/tomato-timer
 
    Document: https://redux.js.org/
 
-# 1. npm install redux react-redux --save
+1. npm install redux react-redux --save
     거의 모든 언어서 사용된다. => 리액트만을 위해 만들어진게 아니다.
-# 2. why do need a Redux? 
+2. why do need a Redux? 
     redux is state management for react!
     2.1 Components have local state, but apps have global state
     => component's have local state (ex. instagram heart have a 2 compoent), app's a have global state (ex. use's login & logout)
@@ -30,9 +44,9 @@ https://exp.host/@serranoarevalo/tomato-timer
     3.3 We needed to save the shared state somewhere.
     3.4 Redux = state Container.
     global shared the state
-# 3. when we don't need a Redux?
+3. when we don't need a Redux?
     build a blog = too simple
-# 4. when we need a Redux?
+4. when we need a Redux?
     Commenting on a post
     No flying props
     Redux is global state container
@@ -53,12 +67,12 @@ https://exp.host/@serranoarevalo/tomato-timer
 ### v2.x USE REDUX
 
 ## v1.1 CREATE Button COMPONENT
-# 1. Timer > index.js
+1. Timer > index.js
     <View style={styles.lower}>
                     < Button iconName="play-circle" onPress={() => alert("it works!")} />
                     < Button iconName="stop-circle" onPress={() => alert("it works!")} />
     </View>
-# 2. Button > index.js
+2. Button > index.js
     function Button({ iconName, onPress }) {
         return (
             <TouchableOpacity onPressOut = {onPress}>
@@ -66,11 +80,11 @@ https://exp.host/@serranoarevalo/tomato-timer
             </TouchableOpacity>
         );
     }
-# 3. onPress 떼고 나서, onPressOut 뗄 때 구분 => 아이폰에선 떼고 나서!
+3. onPress 떼고 나서, onPressOut 뗄 때 구분 => 아이폰에선 떼고 나서!
 
 
 ## v1.0 CREATE TIME COMPONENT
-# 1. component > Timer > index.js
-# 2. index.js 화면 구성
-# 3. app.js  수정
+1. component > Timer > index.js
+2. index.js 화면 구성
+3. app.js  수정
     
