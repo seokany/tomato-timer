@@ -81,6 +81,8 @@ const actionCreators = {
     addSecond
 };
 
+export { actionCreators };
+
 //Export Reducer
 //button listen!
 export default reducer; 

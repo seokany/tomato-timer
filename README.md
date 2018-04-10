@@ -8,6 +8,27 @@ https://exp.host/@serranoarevalo/tomato-timer
 
 ### Version
 
+## v3.3 Connecting the Components to Actions
+1. Timer => index.js
+    import {bindActionCreators} from 'redux';
+    function mapDispatchToProps(dispatch)
+    //dispatch => action send function to reducer
+    return { startTimer: bindActionCreators()}
+    import { actionCreators as tomatoActions } from '../../reducer'; 
+    {startTimer: bindActionCreators(tomatoActions.startTimer, dispatch),
+    restartTimer: bindActionCreators(tomatoActions.restartTimer, dispatch)}
+    export default connect(mapStateToProps, mapDispatchToProps)(Timer);
+2. reducer => export {actionCreators};
+3. Timer => presenter.js
+    render() {
+        console.log(this.props);
+    }
+    const { isPlaying, elapsedTime, timerDuration, + startTimer, restartTimer}
+    // button change
+    <View style={styles.lower}>
+        {!isPlaying && ( < Button iconName="play-circle" onPress={startTimer} /> )}
+        {isPlaying && (< Button iconName="stop-circle" onPress={restartTimer} /> )} </View>
+    
 ## v3.2 Connecting the Components to State
 
 ## v3.1 Creating tomato reducer
