@@ -8,6 +8,58 @@ https://exp.host/@serranoarevalo/tomato-timer
 
 ### Version
 
+## v3.5 Adding second to the counter
+1.  Timer => presenter.js
+    class Timer =>
+    componentWillReceiveProps(nextProps) {
+        const currentProps = this.props;
+        console.log(
+            `The current isPlaying is: ${currentProps.isPlaying} and the new is Playing is: ${nextProps.isPlaying}
+        )
+    }
+    // console에서 확인바람.
+2.  위에 지우고, 
+    if(currentProps.isPlaying === true && nextProps.isPlaying === false){
+        //start the interval
+        console.log("should start");
+    } else if (
+        currentProps.isPlaying === false && nextProps.isPlaying === true
+    ) { //stop the interval
+        console.log("should stop");  
+    }
+    }
+3.  componentWillReceiveProps(nextProps) {
+        const currentProps = this.props;
+        if(currentProps.isPlaying === true && nextProps.isPlaying === false) {
+            //startInterval
+            const timerInterval = setInterval(() => {
+                currentProps.addSecond();}, 1000);
+            this.setState({timerInterval});
+        } else if (
+            currentProps.isPlaying === false && nextProps.isPlaying === false) {
+                //stopInterval
+                clearInterval(this.state.timeInterval)
+            }  
+    }
+    // 하면 stop을 눌러도 리셋되서 다시 됨.
+4. componentWillReceiveProps(nextProps) {
+        const currentProps = this.props;
+        if(!currentProps.isPlaying && nextProps.isPlaying) {
+            //startInterval
+            const timerInterval = setInterval(() => {
+                currentProps.addSecond();
+            }, 1000);
+            this.setState({
+                interval: timerInterval
+            });
+        } else if (
+            currentProps.isPlaying && !nextProps.isPlaying) {
+                //stopInterval
+                clearInterval(this.state.interval);
+            }  
+    }
+    이렇게 해야함.
+
 ## v3.4 Practicing setInterval
 1.  인터벌은 초가 지나면 실행되는 function
     //chrome console!

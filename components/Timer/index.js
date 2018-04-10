@@ -17,7 +17,7 @@ function mapDispatchToProps(dispatch){
         startTimer: bindActionCreators(tomatoActions.startTimer, dispatch),
         restartTimer: bindActionCreators(tomatoActions.restartTimer, dispatch),
         addSecond: bindActionCreators(tomatoActions.addSecond, dispatch)
-    }
+    };
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Timer);

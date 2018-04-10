@@ -12,12 +12,12 @@ function startTimer() {
 function restartTimer() {
     return {
         type: RESTART_TIMER
-    }
+    };
 }
 function addSecond() {
     return {
         type: ADD_SECOND
-    }
+    };
 }
 //Reducer
 
@@ -54,9 +54,9 @@ function applyStartTimer(state) {
 function applyRestartTimer(state) {
     return {
         ...state,
-        isPlaying: false,
+        isPlaying: false, 
         elapsedTime: 0
-    }
+    };
 }
 
 function applyAddSecond(state) {
@@ -64,7 +64,7 @@ function applyAddSecond(state) {
         return {
             ...state,
             elapsedTime: state.elapsedTime + 1
-        }
+        };
     } else {
         return {
             ...state,
