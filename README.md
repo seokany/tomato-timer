@@ -8,6 +8,8 @@ https://exp.host/@serranoarevalo/tomato-timer
 
 ### Version
 
+## v3.2 Connecting the Components to State
+
 ## v3.1 Creating tomato reducer
 1. reducer.js =>
     Import
