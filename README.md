@@ -8,6 +8,22 @@ https://exp.host/@serranoarevalo/tomato-timer
 
 ### Version
 
+## v3.4 Practicing setInterval
+1.  인터벌은 초가 지나면 실행되는 function
+    //chrome console!
+    setInterval(function(){console.log('hello')}, 1000) //1000밀리초마다 function이 실행됨, 즉1초마다.
+
+2.  Timer => index.js
+    function mapDispatchToProps =>
+      addSecond: bindActionCreators(tomatoActions.addSecond, dispatch)
+    Timer => presenter.js
+    const =>
+      addSecond
+3.  interval을 멈춰보자. 
+    variable을 assign해야 한다.
+    var interval = setInterval(funtion(){console.log("hello")}, 1000)
+4.  clearInterval(interval)
+
 ## v3.3 Connecting the Components to Actions
 1. Timer => index.js
     import {bindActionCreators} from 'redux';
