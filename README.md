@@ -3,10 +3,25 @@ Learn Redux by making a Pomodoro Technique Timer in React Native.
 
 ## Try it on Expo
 
-https://exp.host/@serranoarevalo/tomato-timer
+https://exp.host/@seokany/tomato-timer
 
+## v3.6 Turning seconds into minutes
+1. Timer => presenter.js => class Timer => render() => view
+    <Text style = {styles.time}> {timerDuration - elapsedTime} </Text>
+2. Timer => presenter.js 
+    function formatTime(time) {
+        let minutes = Math.floor(time/60);
+        time -= minutes*60
+        let seconds = parseInt(time % 60, 10);
+        return `${minutes < 10 ? `0${minutess}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;  
+    }
+    표시를 초로 바꾸고, 얘를들어 8초 1 이면 08초 01 로 바꿈.
+    //javascript의 mathModule! (codeAcademy)
+3. Timer => presenter.js => class Timer => render() => view
+    <Text style = {styles.time}> {formatTime(timerDuration - elapsedTime)} </Text>
+    // formatTime 추가.
 
-### Version
+    
 
 ## v3.5 Adding second to the counter
 1.  Timer => presenter.js
